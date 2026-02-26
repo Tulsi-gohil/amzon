@@ -14,13 +14,13 @@ function App() {
     setLoading(true);
     try {
      
-       const getRes = await fetch("http://187.77.184.135/api/account");
+       const getRes = await fetch("http://187.77.184.135:5000/api/account");
       const data = await getRes.json();
       
       if (data.success) { 
         const fullMobileNumber = `+91${mobile}`;
 
-         const postRes = await fetch("http://187.77.184.135/api/user", {
+         const postRes = await fetch("http://187.77.184.135:5000/api/user", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
